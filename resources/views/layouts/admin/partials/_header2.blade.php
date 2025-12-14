@@ -75,7 +75,7 @@
 
                         <div class="dropdown-menu dropdown-menu-end">
                             <div class="dropdown-item">
-                                <h6 class="fw-bold mb-0 text-truncate">
+                                <h6 class="fw-bold mb-0 text-truncate" style="font-size: 30px">
                                     {{ auth()->user()->name }}
                                 </h6>
                                 <small class="text-muted">
@@ -85,11 +85,6 @@
 
                             <div class="dropdown-divider"></div>
 
-                            <a class="dropdown-item d-flex align-items-center gap-2"
-                                href="{{ route('admin.profile.update', auth()->user()->id) }}">
-                                <i class="fi fi-rr-settings"></i>
-                                {{ translate('settings') }}
-                            </a>
 
                             <a class="dropdown-item d-flex align-items-center gap-2"
                                 href="javascript:"
