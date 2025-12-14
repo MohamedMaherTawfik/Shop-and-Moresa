@@ -68,14 +68,14 @@
                             </div>
 
 
-                            {{-- Delete Button --}}
+                            {{-- Delete Button
                             <form action="{{ route('admin.admin-delete', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this admin?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">
                                     Delete
                                 </button>
-                            </form>
+                            </form> --}}
 
                         </td>
 
