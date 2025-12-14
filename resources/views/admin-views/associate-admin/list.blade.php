@@ -49,6 +49,7 @@
                                 <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ $user->status == 1 ? 'Active' : 'Inactive' }}
                                 </button>
+
                                 <ul class="dropdown-menu">
                                     <li>
                                         <form action="{{ route('admin.admin-status', $user->id) }}" method="POST" class="m-0">
@@ -57,6 +58,7 @@
                                             <button type="submit" class="dropdown-item">Active</button>
                                         </form>
                                     </li>
+
                                     <li>
                                         <form action="{{ route('admin.admin-status', $user->id) }}" method="POST" class="m-0">
                                             @csrf
@@ -66,16 +68,6 @@
                                     </li>
                                 </ul>
                             </div>
-
-
-                            {{-- Delete Button
-                            <form action="{{ route('admin.admin-delete', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this admin?');">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">
-                                    Delete
-                                </button>
-                            </form> --}}
 
                         </td>
 

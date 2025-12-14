@@ -9,6 +9,8 @@ use App\Http\Controllers\Customer\Auth\RegisterController;
 use App\Http\Controllers\Customer\Auth\SocialAuthController;
 use App\Http\Controllers\Customer\PaymentController;
 use App\Http\Controllers\Customer\SystemController;
+use App\Http\Controllers\Web\AssociationAdminAuth;
+use App\Http\Controllers\Web\AssociationAdminDashboard;
 use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\ChattingController;
 use App\Http\Controllers\Web\CouponController;
@@ -493,3 +495,19 @@ if (!$isGatewayPublished) {
         });
     });
 }
+
+Route::group(['prefix' => 'association-admin','as' => 'association-admin.'], function () {
+    Route::controller(AssociationAdminAuth::class)->group(function () {
+        Route::get('login', 'login')->name('login');
+        Route::post('login', 'login_submit')->name('login_submit');
+        Route::post('logout', 'logout')->name('logout');
+    });
+});
+
+
+Route::group(['prefix' => 'association-admin','as' => 'association-admin.'], function () {
+    Route::controller(AssociationAdminDashboard::class)->group(function () {
+        Route::get('dashboard', 'dashboard')->name('dashboard');
+
+    });
+});
