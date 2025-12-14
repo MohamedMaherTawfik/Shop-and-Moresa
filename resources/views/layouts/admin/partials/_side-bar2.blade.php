@@ -7,7 +7,7 @@
 <aside class="js-aside aside d-none d-lg-block">
     <div class="aside-header d-flex align-items-center gap-2 justify-content-between">
         <a class="navbar-logo" href="{{ route('admin.dashboard.index') }}">
-            <img height="24" src="{{ getStorageImages(path: $eCommerceLogo, type: 'backend-logo') }}"
+            <img height="32" src="{{ getStorageImages(path: $eCommerceLogo, type: 'backend-logo') }}"
                  alt="{{ translate('logo') }}">
         </a>
         <button type="button" class="js-aside-toggle navbar-aside-toggle btn-icon border-0">
@@ -19,7 +19,7 @@
         <ul class="aside-nav navbar-nav gap-2">
             <li>
                 <a class="nav-link {{ Request::is('admin/dashboard') ? 'active' : '' }}"
-                   title="{{ translate('dashboard') }}" href="{{ route('admin.dashboard.index') }}">
+                   title="{{ translate('dashboard') }}" href="#">
                     <i class="fi fi-sr-home"></i>
                     <span class="aside-mini-hidden-element text-truncate">
                         {{ translate('dashboard') }}
@@ -29,16 +29,12 @@
             @if(Helpers::module_permission_check('support_section'))
                 <li>
                     <a class="nav-link {{ Request::is('admin/support-ticket*') ? 'active' : '' }}"
-                       href="{{ route('admin.support-ticket.view') }}" title="{{ translate('All Users') }}">
+                       href="{{ route('association-admin.users') }}" title="{{ translate('All Users') }}">
                         {{-- users icon --}}
                         <i class="fi fi-sr-users"></i>
                         <span class="aside-mini-hidden-element text-truncate">
                             <span class="position-relative">
                                 {{ translate('All Users') }}
-                                @if(\App\Models\SupportTicket::where('status','open')->count()>0)
-                                    <span
-                                        class="btn-status btn-xs-status btn-status-danger position-absolute top-0 menu-status"></span>
-                                @endif
                             </span>
                         </span>
                     </a>
