@@ -215,7 +215,7 @@
                     </li>
                 @endif
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <div class="dropdown">
                         <a class="d-flex" href="javascript:" data-bs-toggle="dropdown">
                             <img class="rounded-circle border border-2 min-w-36 aspect-1" width="36"
@@ -231,7 +231,7 @@
                                             {{ auth()->user()->name }}
                                         </h4>
                                         <p class="fs-12 text-body-light fw-medium max-w-200 text-truncate">
-                                            {{ ucwords(auth()->user()?->role) ?? '' }}
+                                            {{ auth()->user()?->role ?? '' }}
                                         </p>
                                     </div>
                                 </div>
@@ -253,7 +253,7 @@
                             </a>
                         </div>
                     </div>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>
