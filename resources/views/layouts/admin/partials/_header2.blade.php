@@ -219,22 +219,19 @@
                     <div class="dropdown">
                         <a class="d-flex" href="javascript:" data-bs-toggle="dropdown">
                             <img class="rounded-circle border border-2 min-w-36 aspect-1" width="36"
-                                src="{{ getStorageImages(path: auth('admin')->user()->image_full_url, type: 'backend-profile') }}"
+                                src="{{ getStorageImages(path: auth()->user()->image_full_url, type: 'backend-profile') }}"
                                 alt="{{ translate('image_description') }}">
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
                             <div class="dropdown-item">
                                 <div class="media gap-2 align-items-center">
-                                    <img class="rounded-circle border border-2 aspect-1" width="40"
-                                        src="{{ getStorageImages(path: auth('admin')->user()->image_full_url, type: 'backend-profile') }}"
-                                        alt="{{ translate('image_description') }}">
 
                                     <div class="media-body overflow-hidden w-100">
                                         <h4 class="fw-bold max-w-200 mb-1 text-truncate">
-                                            {{ auth('admin')->user()->name }}
+                                            {{ auth()->user()->name }}
                                         </h4>
                                         <p class="fs-12 text-body-light fw-medium max-w-200 text-truncate">
-                                            {{ ucwords(auth('admin')->user()?->role?->name) ?? '' }}
+                                            {{ auth()->user()?->role ?? '' }}
                                         </p>
                                     </div>
                                 </div>

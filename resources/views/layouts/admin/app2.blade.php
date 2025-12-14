@@ -33,7 +33,7 @@
     </div>
 </div>
 
-@include('layouts.admin.partials._header')
+@include('layouts.admin.partials._header2')
 @include('layouts.admin.partials._side-bar2')
 
 <main id="content" role="main" class="main-content">
