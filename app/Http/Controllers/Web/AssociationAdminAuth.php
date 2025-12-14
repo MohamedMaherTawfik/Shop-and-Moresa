@@ -19,20 +19,17 @@ class AssociationAdminAuth extends Controller
             'email'    => 'required|email',
             'password' => 'required',
         ]);
-
         if (Auth::attempt($request->only('email', 'password'))) {
 
             if (Auth::user()->role === 'associate-admin') {
-
                 $request->session()->regenerate();
+                dd(Auth::user());
                 return redirect()->route('association-admin.dashboard');
 
             } else {
-                // لو الدور غلط
                 Auth::logout();
             }
         }
-
         return back()
             ->withInput($request->only('email'))
             ->with('error', 'Invalid email or password');
