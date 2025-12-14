@@ -44,6 +44,8 @@
                 </li>
             @endif
 
+
+
             <?php $checkSetupGuideRequirements = checkSetupGuideRequirements(panel: 'admin'); ?>
 
             <li class="nav-item {{ $checkSetupGuideRequirements['completePercent'] < 100 ? 'pt-5 mt-5 d-none d-lg-block' : '' }}">

@@ -926,7 +926,7 @@
                             <span
                                 class="aside-mini-hidden-element flex-grow-1 d-flex justify-content-between align-items-center">
                                 <span class="text-truncate max-w-180">
-                                    associate admin
+                                    Associate Admin
                                 </span>
                                 <i class="fi fi-sr-angle-down"></i>
                             </span>

@@ -508,6 +508,5 @@ Route::group(['prefix' => 'association-admin','as' => 'association-admin.'], fun
 Route::group(['prefix' => 'association-admin','as' => 'association-admin.'], function () {
     Route::controller(AssociationAdminDashboard::class)->group(function () {
         Route::get('dashboard', 'dashboard')->name('dashboard');
-
     });
 });
