@@ -30,7 +30,8 @@
                 <li>
                     <a class="nav-link {{ Request::is('admin/support-ticket*') ? 'active' : '' }}"
                        href="{{ route('admin.support-ticket.view') }}" title="{{ translate('All Users') }}">
-                        <i class="fi fi-sr-headphones"></i>
+                        {{-- users icon --}}
+                        <i class="fi fi-sr-users"></i>
                         <span class="aside-mini-hidden-element text-truncate">
                             <span class="position-relative">
                                 {{ translate('All Users') }}

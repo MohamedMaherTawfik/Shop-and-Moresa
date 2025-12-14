@@ -75,10 +75,10 @@
 
                         <div class="dropdown-menu dropdown-menu-end">
                             <div class="dropdown-item">
-                                <h6 class="fw-bold mb-0 text-truncate" style="font-size: 26px">
+                                <h6 class="fw-bold mb-0 text-truncate" style="font-size: 22px">
                                     {{ auth()->user()->name }}
                                 </h6>
-                                <small class="text-muted" style="font-size:16px">
+                                <small class="text-muted" style="font-size:14px">
                                     {{ auth()->user()->role }}
                                 </small>
                             </div>
