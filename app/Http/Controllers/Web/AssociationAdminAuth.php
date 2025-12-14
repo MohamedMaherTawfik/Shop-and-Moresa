@@ -23,9 +23,7 @@ class AssociationAdminAuth extends Controller
 
             if (Auth::user()->role === 'associate-admin') {
                 $request->session()->regenerate();
-                dd(Auth::user());
                 return redirect()->route('association-admin.dashboard');
-
             } else {
                 Auth::logout();
             }
