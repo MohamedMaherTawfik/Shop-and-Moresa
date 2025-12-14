@@ -36,6 +36,8 @@ class FlashDeal extends Model
 {
     use StorageTrait, CacheManagerTrait;
 
+    protected $table = 'flash_deals';
+
     /**
      * The attributes that are mass assignable.
      *
