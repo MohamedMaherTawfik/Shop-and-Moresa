@@ -68,7 +68,7 @@ class associateAdminController extends Controller
         User::where('id', request('id'))
             ->update(['is_active' => $request->is_active]);
 
-        return response()->json(['success' => true]);
+        return redirect()->route('admin.admin-list')->with('success', 'تمت الحذف بنجاح');
     }
 
     public function destroy($id)
