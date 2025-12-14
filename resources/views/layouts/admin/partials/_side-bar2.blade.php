@@ -29,11 +29,11 @@
             @if(Helpers::module_permission_check('support_section'))
                 <li>
                     <a class="nav-link {{ Request::is('admin/support-ticket*') ? 'active' : '' }}"
-                       href="{{ route('admin.support-ticket.view') }}" title="{{ translate('support_Ticket') }}">
+                       href="{{ route('admin.support-ticket.view') }}" title="{{ translate('All Users') }}">
                         <i class="fi fi-sr-headphones"></i>
                         <span class="aside-mini-hidden-element text-truncate">
                             <span class="position-relative">
-                                {{ translate('support_Ticket') }}
+                                {{ translate('All Users') }}
                                 @if(\App\Models\SupportTicket::where('status','open')->count()>0)
                                     <span
                                         class="btn-status btn-xs-status btn-status-danger position-absolute top-0 menu-status"></span>
