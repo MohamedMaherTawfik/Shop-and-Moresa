@@ -40,9 +40,18 @@ class associateAdminController extends Controller
             $data['image'] = $request->file('image')->store('users', 'public');
         }
         $data['name'] = $data['f_name'] . ' ' . $data['l_name'];
-        $data['role'] = 'associate-admin';
         $data['password'] = bcrypt($data['password']);
-        User::create($data);
+        User::create([
+            'name'           => $data['name'],
+            'f_name'         => $data['f_name'],
+            'l_name'         => $data['l_name'],
+            'phone'          => $data['phone'],
+            'email'          => $data['email'],
+            'association_id' => $data['association_id'],
+            'image'          => $data['image'],
+            'password'       => $data['password'],
+            'role'           => 'associate-admin',
+        ]);
 
         return redirect()
             ->route('admin.admin-list')
