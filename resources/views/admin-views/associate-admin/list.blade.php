@@ -11,7 +11,7 @@
             Associate Admins
         </h1>
 
-        <a href="{{ route('admin-add-new') }}"
+        <a href="{{ route('admin.admin-add-new') }}"
            class="inline-flex items-center px-5 py-2 text-sm font-medium text-white
                   bg-blue-600 rounded-lg hover:bg-blue-700 transition">
             + Add New
@@ -60,7 +60,7 @@
 
                         <td class="px-4 py-3 text-center space-x-2">
 
-                            <a href="{{ route('admin-update-view', $user->id) }}"
+                            <a href="{{ route('admin.admin-update-view', $user->id) }}"
                                class="px-3 py-1 text-xs text-white bg-yellow-500 rounded hover:bg-yellow-600">
                                 Edit
                             </a>
