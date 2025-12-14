@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Association;
 use App\Models\Storage;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class associateAdminController extends Controller
     /** صفحة الإضافة */
     public function getAddView()
     {
-        return view('admin-views.associate-admin.add');
+        $associatives=Association::all();
+        return view('admin-views.associate-admin.add',compact('associatives'));
     }
 
     /** حفظ مستخدم جديد */
