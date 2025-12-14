@@ -21,18 +21,6 @@
 
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" name="name" id="name" class="form-control" required>
-                    </div>
-
-                    <div class="col-md-6">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" name="email" id="email" class="form-control" required>
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col-md-6">
                         <label for="f_name" class="form-label">First Name</label>
                         <input type="text" name="f_name" id="f_name" class="form-control" required>
                     </div>
@@ -40,6 +28,18 @@
                     <div class="col-md-6">
                         <label for="l_name" class="form-label">Last Name</label>
                         <input type="text" name="l_name" id="l_name" class="form-control" required>
+                    </div>
+                </div>
+
+                 <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" id="email" class="form-control" required>
+                    </div>
+
+                      <div class="col-md-6">
+                        <label for="password" class="form-label">password</label>
+                        <input type="password" name="password" id="password" class="form-control" required>
                     </div>
                 </div>
 

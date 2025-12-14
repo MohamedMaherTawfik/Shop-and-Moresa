@@ -27,19 +27,21 @@ class associateAdminController extends Controller
     public function add(Request $request)
     {
         $data = $request->validate([
-            'name'           => 'required|string|max:255',
             'f_name'         => 'required|string|max:255',
             'l_name'         => 'required|string|max:255',
-            'phone'          => 'required|string|max:20',
+            'phone'          => 'nullable|string|max:20',
             'email'          => 'required|email|unique:users,email',
             'association_id' => 'required|integer',
             'image'          => 'nullable|image|max:2048',
+            'password'       => 'required|string|min:6',
         ]);
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('users', 'public');
         }
-
+        $data['name'] = $data['f_name'] . ' ' . $data['l_name'];
+        $data['role'] = 'associate-admin';
+        $data['password'] = bcrypt($data['password']);
         User::create($data);
 
         return redirect()
