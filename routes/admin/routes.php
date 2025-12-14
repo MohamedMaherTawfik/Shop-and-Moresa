@@ -1188,7 +1188,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin', '
 
        Route::group(['prefix' => 'associate-admin', 'middleware' => AssociationAdmin::class], function () {
         Route::controller(associateAdminController::class)->group(function () {
-            Route::get('list', 'index')->name(name: 'admin-list');
+            Route::get('list', 'index')->name('admin-list');
             Route::get('add', 'getAddView')->name('admin-add-new');
             Route::post('add', 'add')->name('admin-add-new-post');
             Route::get('update/{id}', 'getUpdateView')->name('admin-update-view');
