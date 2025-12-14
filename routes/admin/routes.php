@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdvancedSearchController;
+use App\Http\Controllers\admin\associateAdminController;
 use App\Http\Controllers\Admin\BusinessSettings\WebsiteSetupController;
 use App\Http\Controllers\Admin\ExpenseTransactionReportController;
 use App\Http\Controllers\Admin\Promotion\ClearanceSaleController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\Admin\Promotion\ClearanceSaleVendorOfferController;
 use App\Http\Controllers\Admin\Settings\AddonActivationController;
 use App\Http\Controllers\Admin\Settings\FirebaseOTPVerificationController;
 use App\Http\Controllers\FirebaseController;
+use App\Http\Middleware\AssociationAdmin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SharedController;
 use App\Http\Controllers\Admin\ReportController;
@@ -155,7 +157,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin', '
             Route::post('redeem', [\App\Http\Controllers\Admin\AssociationCouponController::class, 'redeem'])->name('redeem');
             Route::delete('{coupon}', [\App\Http\Controllers\Admin\AssociationCouponController::class, 'destroy'])->name('destroy');
         });
-  
+
     Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
         Route::controller(DashboardController::class)->group(function () {
             Route::get('', 'index')->name('index');
@@ -1181,6 +1183,17 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin', '
                 Route::get('details/{id}', 'getDetailsView')->name('details');
                 Route::post('refund-status-update', 'updateRefundStatus')->name('refund-status-update');
             });
+        });
+    });
+
+       Route::group(['prefix' => 'associate-admin', 'middleware' => AssociationAdmin::class], function () {
+        Route::controller(associateAdminController::class)->group(function () {
+            Route::get('list', 'index')->name(name: 'admin-list');
+            Route::get('add', 'getAddView')->name('admin-add-new');
+            Route::post('add', 'add')->name('admin-add-new-post');
+            Route::get('update/{id}', 'getUpdateView')->name('admin-update-view');
+            Route::post('update/{id}', 'admin-update')->name('admin-update-post');
+            Route::post('status', 'updateStatus')->name('admin-status');
         });
     });
 });

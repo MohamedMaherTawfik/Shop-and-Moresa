@@ -226,4 +226,9 @@ class User extends Authenticatable
         });
     }
 
+    public function association(): BelongsTo
+    {
+        return $this->belongsTo(Association::class, 'association_id');
+    }
+
 }
