@@ -16,6 +16,15 @@
         <div class="card shadow">
             <div class="card-body">
                 <h4 class="text-center mb-4">Login</h4>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
                 <form action="{{ route('association-admin.login_submit') }}" method="POST">
                     @csrf

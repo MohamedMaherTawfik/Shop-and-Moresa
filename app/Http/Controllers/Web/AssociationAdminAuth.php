@@ -23,7 +23,7 @@ class AssociationAdminAuth extends Controller
             return redirect()->route('association-admin.dashboard');
             }
         }
-        return redirect()->back()->withInput($request->only('email'));
+        return back()->with('error', 'Invalid email or password');
     }
 
     public function logout()
