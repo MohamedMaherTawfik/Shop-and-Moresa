@@ -78,6 +78,7 @@ class User extends Authenticatable
         'updated_at',
         'street_address',
         'country',
+        'role',
         'city',
         'zip',
         'house_no',
