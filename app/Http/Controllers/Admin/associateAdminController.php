@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Storage;
@@ -41,7 +41,7 @@ class associateAdminController extends Controller
         User::create($data);
 
         return redirect()
-            ->route('admin-list')
+            ->route('admin.admin-list')
             ->with('success', 'تمت الإضافة بنجاح');
     }
 
@@ -77,7 +77,7 @@ class associateAdminController extends Controller
         $user->update($data);
 
         return redirect()
-            ->route('admin-list')
+            ->route('admin.admin-list')
             ->with('success', 'تم التحديث بنجاح');
     }
 
