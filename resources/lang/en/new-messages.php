@@ -3429,4 +3429,10 @@ return [
 	"Current" => "Current",
 	"access_available" => "Access available",
 	"select_mail_sorting_order" => "Select mail sorting order",
+	"email_already_in_use" => "Email already in use",
+	"email_must_be_valid" => "Email must be valid",
+	"please_add_product_to_cart_before_applying_discount" => "Please add product to cart before applying discount",
+	"join" => "Join",
+	"Walk-In-Customer" => "Walk-In-Customer",
+	"Subscription_Date" => "Subscription Date",
 ];
