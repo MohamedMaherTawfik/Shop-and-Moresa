@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdvancedSearchController;
-use App\Http\Controllers\Admin\associateAdminController;
+use app\Http\Controllers\Admin\associateAdminController;
 use App\Http\Controllers\Admin\BusinessSettings\WebsiteSetupController;
 use App\Http\Controllers\Admin\ExpenseTransactionReportController;
 use App\Http\Controllers\Admin\Promotion\ClearanceSaleController;
