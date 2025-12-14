@@ -44,9 +44,10 @@
 
                         <td class="text-center d-flex justify-content-center gap-2">
 
-                            {{-- Status Button --}}
-                            <form action="{{ route('admin.admin-status', $user->id) }}" method="POST">
+                           {{-- Status Button --}}
+                            <form action="{{ route('admin.admin-status', $user->id) }}" method="POST" class="d-inline">
                                 @csrf
+                                <input type="hidden" name="is_active" value="{{ $user->status == 1 ? 0 : 1 }}">
                                 <button type="submit" class="btn btn-info btn-sm">
                                     {{ $user->status == 1 ? 'Active' : 'Inactive' }}
                                 </button>

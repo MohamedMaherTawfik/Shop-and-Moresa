@@ -62,12 +62,11 @@ class associateAdminController extends Controller
     public function updateStatus(Request $request)
     {
         $request->validate([
-            'id'     => 'required|exists:users,id',
-            'status' => 'required|boolean',
+            'is_active' => 'required|boolean',
         ]);
 
-        User::where('id', $request->id)
-            ->update(['status' => $request->status]);
+        User::where('id', request('id'))
+            ->update(['is_active' => $request->is_active]);
 
         return response()->json(['success' => true]);
     }
