@@ -11,6 +11,7 @@ class AssociationAdminDashboard extends Controller
     public function dashboard()
     {
         $users=User::where('association_id',auth()->user()->association_id)->get();
+        dd($users);
         return view('web.association-admin.dashboard',compact('users'));
     }
 }
