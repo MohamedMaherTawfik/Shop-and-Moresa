@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdvancedSearchController;
-use App\Http\Controllers\admin\associateAdminController;
+use App\Http\Controllers\Admin\associateAdminController;
 use App\Http\Controllers\Admin\BusinessSettings\WebsiteSetupController;
 use App\Http\Controllers\Admin\ExpenseTransactionReportController;
 use App\Http\Controllers\Admin\Promotion\ClearanceSaleController;
@@ -131,6 +131,18 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin', '
     Route::get('component-snippets', function () {
         return view('layouts.admin.component-snippets');
     });
+
+    Route::group(['prefix' => 'associate-admin'], function () {
+        Route::controller(associateAdminController::class)->group(function () {
+            Route::get('list', 'index')->name('admin-list');
+            Route::get('add', 'getAddView')->name('admin-add-new');
+            Route::post('add', 'add')->name('admin-add-new-post');
+            Route::get('update/{id}', 'getUpdateView')->name('admin-update-view');
+            Route::post('update/{id}', 'admin-update')->name('admin-update-post');
+            Route::post('status', 'updateStatus')->name('admin-status');
+        });
+    });
+
 
     Route::controller(AdvancedSearchController::class)->group(function () {
         Route::get('advanced-search', 'getSearch')->name('advanced-search');
@@ -1186,14 +1198,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin', '
         });
     });
 
-       Route::group(['prefix' => 'associate-admin'], function () {
-        Route::controller(associateAdminController::class)->group(function () {
-            Route::get('list', 'index')->name('admin-list');
-            Route::get('add', 'getAddView')->name('admin-add-new');
-            Route::post('add', 'add')->name('admin-add-new-post');
-            Route::get('update/{id}', 'getUpdateView')->name('admin-update-view');
-            Route::post('update/{id}', 'admin-update')->name('admin-update-post');
-            Route::post('status', 'updateStatus')->name('admin-status');
-        });
-    });
+
 });
