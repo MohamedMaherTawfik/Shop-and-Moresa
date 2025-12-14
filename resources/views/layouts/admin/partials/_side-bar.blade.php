@@ -921,12 +921,12 @@
 
                 <li class=" {{ (Request::is('admin/employee*') || Request::is('admin/custom-role*')) ? 'sub-menu-opened' : '' }}">
                         <a class="nav-link nav-link-toggle {{ (Request::is('admin/employee*') || Request::is('admin/custom-role*')) ? 'active' : '' }}"
-                           href="javascript:" title="{{ translate('employees') }}">
+                           href="javascript:" title="associate admin">
                             <i class="fi fi-sr-employee-man-alt"></i>
                             <span
                                 class="aside-mini-hidden-element flex-grow-1 d-flex justify-content-between align-items-center">
                                 <span class="text-truncate max-w-180">
-                                    {{ translate('employees') }}
+                                    associate admin
                                 </span>
                                 <i class="fi fi-sr-angle-down"></i>
                             </span>
