@@ -137,9 +137,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin', '
             Route::get('list', 'index')->name('admin-list');
             Route::get('add', 'getAddView')->name('admin-add-new');
             Route::post('add', 'add')->name('admin-add-new-post');
-            Route::get('update/{id}', 'getUpdateView')->name('admin-update-view');
-            Route::post('update/{id}', 'admin-update')->name('admin-update-post');
-            Route::post('status', 'updateStatus')->name('admin-status');
+            Route::delete('delete/{id}', 'delete')->name('admin-delete');
+            Route::post('status/{id}', 'updateStatus')->name('admin-status');
         });
     });
 

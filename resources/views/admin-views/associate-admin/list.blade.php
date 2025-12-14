@@ -42,12 +42,27 @@
                         <td>{{ $user->email ?? '-' }}</td>
                         <td>{{ $user->association->name ?? '-' }}</td>
 
-                        <td class="text-center">
-                            <a href="{{ route('admin.admin-update-view', $user->id) }}"
-                               class="btn btn-warning btn-sm">
-                                Edit
-                            </a>
+                        <td class="text-center d-flex justify-content-center gap-2">
+
+                            {{-- Status Button --}}
+                            <form action="{{ route('admin.admin-status', $user->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-info btn-sm">
+                                    {{ $user->status == 1 ? 'Active' : 'Inactive' }}
+                                </button>
+                            </form>
+
+                            {{-- Delete Button --}}
+                            <form action="{{ route('admin.admin-delete', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this admin?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">
+                                    Delete
+                                </button>
+                            </form>
+
                         </td>
+
                     </tr>
                 @empty
                     <tr>

@@ -58,42 +58,6 @@ class associateAdminController extends Controller
             ->with('success', 'تمت الإضافة بنجاح');
     }
 
-    /** صفحة التعديل */
-    public function getUpdateView($id)
-    {
-        $user = User::findOrFail($id);
-        return view('admin-views.associate-admin.update', compact('user'));
-    }
-
-    /** تحديث البيانات */
-    public function update(Request $request, $id)
-    {
-        $user = User::findOrFail($id);
-
-        $data = $request->validate([
-            'name'           => 'required|string|max:255',
-            'f_name'         => 'required|string|max:255',
-            'l_name'         => 'required|string|max:255',
-            'phone'          => 'required|string|max:20',
-            'email'          => 'required|email|unique:users,email,' . $user->id,
-            'association_id' => 'required|integer',
-            'image'          => 'nullable|image|max:2048',
-        ]);
-
-        if ($request->hasFile('image')) {
-            if ($user->image) {
-                Storage::disk('public')->delete($user->image);
-            }
-            $data['image'] = $request->file('image')->store('users', 'public');
-        }
-
-        $user->update($data);
-
-        return redirect()
-            ->route('admin.admin-list')
-            ->with('success', 'تم التحديث بنجاح');
-    }
-
     /** تحديث الحالة (active / inactive) */
     public function updateStatus(Request $request)
     {
@@ -106,5 +70,11 @@ class associateAdminController extends Controller
             ->update(['status' => $request->status]);
 
         return response()->json(['success' => true]);
+    }
+
+    public function destroy($id)
+    {
+        User::where('id', $id)->delete();
+        return redirect()->route('admin.admin-list')->with('success', 'تمت الحذف بنجاح');
     }
 }
