@@ -12,7 +12,7 @@ class associateAdminController extends Controller
 {
     public function index()
     {
-        $users = User::where('role','associate-admin')->get();
+        $users = User::where('role','associate-admin')->where('is_active', true)->get();
         return view('admin-views.associate-admin.list', compact('users'));
     }
 
