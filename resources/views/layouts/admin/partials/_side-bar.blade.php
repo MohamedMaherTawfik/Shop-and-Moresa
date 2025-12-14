@@ -949,7 +949,7 @@
 
                                <li class="nav-item">
                                 <a class="nav-link {{ (Request::is('admin/associate-admin/list') || Request::is('admin/employee/add') || Request::is('admin/employee/update*')) ? 'active' : '' }}"
-                                   href="/admin/dashboard/associate-admin/list" title="{{ translate('Association Admin') }}">
+                                   href="{{ route('admin.admin-list') }}" title="{{ translate('Association Admin') }}">
                                     <span class="text-truncate">{{ translate('Association Admin') }}</span>
                                 </a>
                             </li>
