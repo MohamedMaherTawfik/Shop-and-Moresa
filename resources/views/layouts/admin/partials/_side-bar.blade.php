@@ -918,6 +918,30 @@
                     </ul>
                 </li>
 
+
+                <li class=" {{ (Request::is('admin/employee*') || Request::is('admin/custom-role*')) ? 'sub-menu-opened' : '' }}">
+                        <a class="nav-link nav-link-toggle {{ (Request::is('admin/employee*') || Request::is('admin/custom-role*')) ? 'active' : '' }}"
+                           href="javascript:" title="{{ translate('employees') }}">
+                            <i class="fi fi-sr-employee-man-alt"></i>
+                            <span
+                                class="aside-mini-hidden-element flex-grow-1 d-flex justify-content-between align-items-center">
+                                <span class="text-truncate max-w-180">
+                                    {{ translate('employees') }}
+                                </span>
+                                <i class="fi fi-sr-angle-down"></i>
+                            </span>
+                        </a>
+                        <ul class="aside-submenu navbar-nav">
+                            <li class="nav-item px-3 py-2 fw-semibold text-dark bg-section2 aside-mini-show-element">{{ translate('employees') }}</li>
+                               <li class="nav-item">
+                                <a class="nav-link {{ (Request::is('admin/associate-admin/list') || Request::is('admin/employee/add') || Request::is('admin/employee/update*')) ? 'active' : '' }}"
+                                   href="{{ route('admin.admin-list') }}" title="{{ translate('Association Admin') }}">
+                                    <span class="text-truncate">{{ translate('Association Admin') }}</span>
+                                </a>
+                            </li>
+                        </ul>
+                </li>
+
                 @if(auth('admin')->user()->admin_role_id==1)
                     <li class=" {{ (Request::is('admin/employee*') || Request::is('admin/custom-role*')) ? 'sub-menu-opened' : '' }}">
                         <a class="nav-link nav-link-toggle {{ (Request::is('admin/employee*') || Request::is('admin/custom-role*')) ? 'active' : '' }}"
@@ -946,6 +970,7 @@
                                     <span class="text-truncate">{{ translate('employees') }}</span>
                                 </a>
                             </li>
+<<<<<<< HEAD
 {{--
                                <li class="nav-item">
                                 <a class="nav-link {{ (Request::is('admin/associate-admin/list') || Request::is('admin/employee/add') || Request::is('admin/employee/update*')) ? 'active' : '' }}"
@@ -957,6 +982,8 @@
                                     <span class="text-truncate">{{ translate('Association Admin') }}</span>
                                 </a>
                             </li> --}}
+=======
+>>>>>>> f25f9ad6a88b9422c1884f0640aed3458dd6b811
                         </ul>
                     </li>
                 @endif
