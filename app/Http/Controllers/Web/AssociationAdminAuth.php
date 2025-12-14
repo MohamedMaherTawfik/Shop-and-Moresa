@@ -18,8 +18,7 @@ class AssociationAdminAuth extends Controller
         $credentials = $request->only('email', 'password');
         if(Auth::attempt($credentials))
         {
-            dd(Auth::user());
-            if(Auth::user()->role == 'association-admin'){
+            if(Auth::user()->role == 'associate-admin'){
             request()->session()->regenerate();
             return redirect()->route('association-admin.dashboard');
             }
