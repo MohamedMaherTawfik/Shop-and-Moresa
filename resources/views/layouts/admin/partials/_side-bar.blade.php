@@ -970,21 +970,18 @@
                                     <span class="text-truncate">{{ translate('employees') }}</span>
                                 </a>
                             </li>
-<<<<<<< HEAD
+
 {{--
                                <li class="nav-item">
                                 <a class="nav-link {{ (Request::is('admin/associate-admin/list') || Request::is('admin/employee/add') || Request::is('admin/employee/update*')) ? 'active' : '' }}"
-<<<<<<< Updated upstream
+
                                    href="{{ route('admin.admin-list') }}" title="{{ translate('Association Admin') }}">
-=======
-                                   href="{{ route('admin-list') }}" title="{{ translate('Association Admin') }}">
->>>>>>> Stashed changes
+                         href="{{ route('admin-list') }}" title="{{ translate('Association Admin') }}">
+
                                     <span class="text-truncate">{{ translate('Association Admin') }}</span>
                                 </a>
                             </li> --}}
-=======
->>>>>>> f25f9ad6a88b9422c1884f0640aed3458dd6b811
-                        </ul>
+                    </ul>
                     </li>
                 @endif
 
