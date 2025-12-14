@@ -3435,4 +3435,5 @@ return [
 	"join" => "Join",
 	"Walk-In-Customer" => "Walk-In-Customer",
 	"Subscription_Date" => "Subscription Date",
+	"Association Admin" => "Association Admin",
 ];
