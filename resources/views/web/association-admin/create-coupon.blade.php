@@ -42,7 +42,7 @@
                     <div class="mb-3">
                         <label class="form-label">{{ translate('User') }}</label>
                         <input type="text" class="form-control"
-                            value="{{ $user->name }} ({{ $user->email }})"
+                            value="{{ $user->name }} -- ({{ $user->email }})"
                             disabled>
                     </div>
                 </div>
