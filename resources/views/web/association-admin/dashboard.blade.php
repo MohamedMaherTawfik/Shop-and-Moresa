@@ -8,7 +8,7 @@
     {{-- Association Name --}}
     <div class="mb-4">
         <h3 class="fw-bold text-dark">
-            {{ Auth::user()->association->name }}
+            {{ $association->name ?? '-' }}
         </h3>
     </div>
 
@@ -50,9 +50,9 @@
                     <tbody>
                         @forelse ($users as $user)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
+                                <td>{{ $loop->iteration ?? '-' }}</td>
+                                <td>{{ $user->name ?? '-' }}</td>
+                                <td>{{ $user->email ?? '-' }}</td>
                                 <td>{{ $user->phone ?? '-' }}</td>
                                 <td>
                                     <span class="fw-bold">
