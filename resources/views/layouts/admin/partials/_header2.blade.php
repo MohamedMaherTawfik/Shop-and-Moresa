@@ -14,7 +14,7 @@
             </button>
         </div>
 
-        Right Content
+        {{-- Right Content --}}
         <div class="navbar-nav-wrap-content-right">
             <ul class="navbar-nav align-items-center flex-row gap-3">
 
