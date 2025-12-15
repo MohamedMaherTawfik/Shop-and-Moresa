@@ -510,6 +510,6 @@ Route::group(['prefix' => 'association-admin','as' => 'association-admin.'], fun
         Route::get('dashboard', 'dashboard')->name('dashboard');
         Route::get('users', 'users')->name('users');
         Route::get('users/{user}/createCoupon', 'createCoupon')->name('createCoupon');
-        Route::post('users/{user}/createCoupon', 'storeCoupon')->name('storeCoupon');
+        Route::post('users/createCoupon', 'storeCoupon')->name('storeCoupon');
     });
 });

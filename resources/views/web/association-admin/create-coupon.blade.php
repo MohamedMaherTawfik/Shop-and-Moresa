@@ -20,7 +20,7 @@
         </div>
 
         <div class="card-body">
-          <form method="POST" action="{{ route('association-admin.storeCoupon', $user) }}">
+          <form method="POST" action="{{ route('association-admin.storeCoupon') }}">
             @csrf
 
             {{-- Hidden Inputs --}}
@@ -104,50 +104,3 @@
 </div>
 @endsection
 
-@push('script')
-<script>
-$(document).ready(function() {
-    $('#association_id').on('change', function() {
-        var associationId = $(this).val();
-        var userSelect = $('#user_id');
-
-        // Clear current options
-        userSelect.html('<option value="">{{ translate("Select_User") }}</option>');
-
-        if (associationId) {
-            // Show loading
-            userSelect.prop('disabled', true);
-            userSelect.html('<option value="">{{ translate("Loading") }}...</option>');
-
-            // Fetch users for this association
-            $.ajax({
-                url: '{{ route("admin.association-coupons.get-users") }}',
-                method: 'GET',
-                data: { association_id: associationId },
-                success: function(response) {
-                    console.log('AJAX Success:', response); // Debug log
-                    userSelect.html('<option value="">{{ translate("Select_User") }}</option>');
-
-                    if (response.users && response.users.length > 0) {
-                        $.each(response.users, function(index, user) {
-                            userSelect.append('<option value="' + user.id + '">' + user.name + ' (' + user.email + ')</option>');
-                        });
-                    } else {
-                        userSelect.append('<option value="">{{ translate("No_Users_Found") }}</option>');
-                    }
-
-                    userSelect.prop('disabled', false);
-                },
-                error: function(xhr, status, error) {
-                    console.log('AJAX Error:', xhr.responseText, status, error); // Debug log
-                    userSelect.html('<option value="">{{ translate("Error_Loading_Users") }}</option>');
-                    userSelect.prop('disabled', false);
-                }
-            });
-        } else {
-            userSelect.prop('disabled', true);
-        }
-    });
-});
-</script>
-@endpush
