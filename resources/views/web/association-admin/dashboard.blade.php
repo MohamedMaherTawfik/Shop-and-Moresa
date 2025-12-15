@@ -60,7 +60,7 @@
                                     </span>
                                 </td>
                                 <td class="text-center">
-                                    <a href="#"
+                                    <a href="{{ route('association-admin.createCoupon', $user) }}"
                                        class="btn btn-sm btn-primary">
                                         Add Coupon
                                     </a>
