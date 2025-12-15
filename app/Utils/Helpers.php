@@ -445,6 +445,15 @@ class Helpers
 
     public static function module_permission_check($mod_name)
     {
+        if (auth()->check()) {
+            return true;
+        }
+
+        $user = auth()->user();
+
+        if (!isset($user->admin_role_id)) {
+            return true;
+        }
         $user_role = auth('admin')->user()?->role;
         $permission = $user_role?->module_access ?? '';
         if (isset($permission) && $user_role?->status == 1 && in_array($mod_name, (array)json_decode($permission)) == true) {
@@ -962,5 +971,3 @@ if (!function_exists('currency_converter')) {
         return Helpers::set_symbol(round($amount * $rate, 2));
     }
 }
-
-
