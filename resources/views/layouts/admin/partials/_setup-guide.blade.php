@@ -5,7 +5,7 @@ $checkSetupGuideCheckedSteps = collect($checkSetupGuideRequirements['steps'])->f
 })->toArray();
 ?>
 
-@if($checkSetupGuideRequirements['completePercent'] < 100 && auth('admin')->user()->admin_role_id == 1)
+{{-- @if($checkSetupGuideRequirements['completePercent'] < 100 && auth('admin')->user()->admin_role_id == 1) --}}
     <div class="setup-guide">
         <div
             class="setup-guide__button d-flex gap-2 justify-content-between align-items-center bg-white p-3 position-relative rounded-3 pointer shadow"
@@ -96,10 +96,10 @@ $checkSetupGuideCheckedSteps = collect($checkSetupGuideRequirements['steps'])->f
             </div>
         </div>
     </div>
-@endif
+{{-- @endif --}}
 
 
-@if($checkSetupGuideRequirements['completePercent'] < 100 && auth('admin')->user()->admin_role_id == 1)
+{{-- @if($checkSetupGuideRequirements['completePercent'] < 100 && auth('admin')->user()->admin_role_id == 1) --}}
     @if(count($checkSetupGuideCheckedSteps) < 2 && !(request('offcanvasShow') && request('offcanvasShow') == 'offcanvasSetupGuide'))
         @foreach($checkSetupGuideRequirements['steps'] as $checkSetupGuideStepKey => $checkSetupGuideStep)
             @if(!$checkSetupGuideStep['checked'])
@@ -118,4 +118,4 @@ $checkSetupGuideCheckedSteps = collect($checkSetupGuideRequirements['steps'])->f
             @endif
         @endforeach
     @endif
-@endif
+{{-- @endif --}}
