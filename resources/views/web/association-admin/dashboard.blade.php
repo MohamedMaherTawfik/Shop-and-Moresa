@@ -18,7 +18,7 @@
             <div class="card shadow-sm border-0">
                 <div class="card-body d-flex align-items-center justify-content-between">
                     <div>
-                        <h6 class="text-muted mb-1">{{ translate('benefits') }}</h6>
+                        <h6 class="text-muted mb-1">{{ __('messages.benefits') }}</h6>
                         <h3 class="fw-bold mb-0">{{ $users->count() }}</h3>
                     </div>
                     <div class="fs-1 text-primary">
@@ -32,7 +32,7 @@
     {{-- Users Table --}}
     <div class="card shadow-sm border-0">
         <div class="card-header bg-white fw-bold">
-            Users List
+         {{ __('messages.benefits') }}
         </div>
         <div class="card-body p-0">
             <div class="table-responsive">
