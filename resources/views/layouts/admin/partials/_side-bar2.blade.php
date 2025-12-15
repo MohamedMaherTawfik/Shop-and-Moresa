@@ -26,7 +26,6 @@
                     </span>
                 </a>
             </li>
-            @if(Helpers::module_permission_check('support_section'))
                 <li>
                     <a class="nav-link {{ Request::is('admin/support-ticket*') ? 'active' : '' }}"
                        href="{{ route('association-admin.users') }}" title="{{ translate('All Users') }}">
@@ -39,7 +38,6 @@
                         </span>
                     </a>
                 </li>
-            @endif
 
 
 
