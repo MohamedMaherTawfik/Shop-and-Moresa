@@ -9,6 +9,7 @@ use App\Models\User;
 use Devrabiul\ToastMagic\Facades\ToastMagic;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class AssociationAdminDashboard extends Controller
 {
@@ -55,5 +56,14 @@ class AssociationAdminDashboard extends Controller
 
         ToastMagic::success(translate('Coupons_created_successfully'));
         return redirect()->route('association-admin.dashboard');
+    }
+
+      private function generateUniqueCode(): string
+    {
+        do {
+            $code = 'COUPON' . strtoupper(Str::random(8));
+        } while (AssociationCoupon::where('code', $code)->exists());
+
+        return $code;
     }
 }
