@@ -7,9 +7,9 @@
 
     {{-- Association Name --}}
     <div class="mb-4">
-        <h3 class="fw-bold text-dark">
+        <h2 class="fw-bold text-dark">
             {{ $association->name ?? '-' }}
-        </h3>
+        </h2>
     </div>
 
     {{-- Cards --}}
@@ -32,7 +32,7 @@
     {{-- Users Table --}}
     <div class="card shadow-sm border-0">
         <div class="card-header bg-white fw-bold">
-         {{ __('messages.benefits') }}
+            {{ translate('Beneficiaries List') }}
         </div>
         <div class="card-body p-0">
             <div class="table-responsive">
