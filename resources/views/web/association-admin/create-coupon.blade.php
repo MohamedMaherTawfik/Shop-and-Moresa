@@ -20,7 +20,7 @@
         </div>
 
         <div class="card-body">
-          <form method="POST" action="{{ route('association-admin.storeCoupon') }}">
+          <form method="POST" action="{{ route('association-admin.storeCoupon', $user) }}">
             @csrf
 
             {{-- Hidden Inputs --}}
