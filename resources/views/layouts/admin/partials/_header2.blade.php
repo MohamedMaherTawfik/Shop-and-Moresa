@@ -78,9 +78,9 @@
                                 <h6 class="fw-bold mb-0 text-truncate" style="font-size: 22px">
                                     {{ auth()->user()->name }}
                                 </h6>
-                                <small class="text-muted" style="font-size:14px">
+                                {{-- <small class="text-muted" style="font-size:14px">
                                     {{ auth()->user()->role }}
-                                </small>
+                                </small> --}}
                             </div>
 
                             <div class="dropdown-divider"></div>
