@@ -26,10 +26,10 @@
                     </span>
                 </a>
             </li>
-                <li>
+                {{-- <li>
                     <a class="nav-link {{ Request::is('admin/support-ticket*') ? 'active' : '' }}"
                        href="{{ route('association-admin.users') }}" title="{{ translate('All Users') }}">
-                        {{-- users icon --}}
+
                         <i class="fi fi-sr-users"></i>
                         <span class="aside-mini-hidden-element text-truncate">
                             <span class="position-relative">
@@ -37,7 +37,7 @@
                             </span>
                         </span>
                     </a>
-                </li>
+                </li> --}}
 
 
 

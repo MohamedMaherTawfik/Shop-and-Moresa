@@ -1,6 +1,6 @@
 @extends('layouts.admin.app2')
 
-@section('title', 'Association Dashboard')
+@section('title', translate('Association Dashboard'))
 
 @section('content')
 <div class="container-fluid mt-4">
@@ -8,7 +8,7 @@
     {{-- Association Name --}}
     <div class="mb-4">
         <h2 class="fw-bold text-dark">
-            {{ $association->name ?? '-' }}
+          {{ translate('Association') }}   {{ $association->name ?? '-' }}
         </h2>
     </div>
 
@@ -18,7 +18,7 @@
             <div class="card shadow-sm border-0">
                 <div class="card-body d-flex align-items-center justify-content-between">
                     <div>
-                        <h6 class="text-muted mb-1">{{ __('messages.benefits') }}</h6>
+                        <h6 class="text-muted mb-1">{{ translate('Total Beneficiaries') }}</h6>
                         <h3 class="fw-bold mb-0">{{ $users->count() }}</h3>
                     </div>
                     <div class="fs-1 text-primary">
@@ -39,12 +39,12 @@
                 <table class="table table-hover mb-0 align-middle">
                     <thead class="table-light">
                         <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Wallet Balance</th>
-                            <th class="text-center">Action</th>
+                            <th>{{ translate('id') }}</th>
+                            <th>{{ translate('User') }}</th>
+                            <th>{{ translate('Email') }}</th>
+                            <th>{{ translate('Phone') }}</th>
+                            <th>{{ translate('Wallet Balance') }}</th>
+                            <th class="text-center">{{ translate('Action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,14 +62,14 @@
                                 <td class="text-center">
                                     <a href="{{ route('association-admin.createCoupon', $user) }}"
                                        class="btn btn-sm btn-primary">
-                                        Add Coupon
+                                        {{ translate('Add Coupon') }}
                                     </a>
                                 </td>
                             </tr>
                         @empty
                             <tr>
                                 <td colspan="6" class="text-center text-muted py-4">
-                                    No users found
+                                    {{ translate('No users found') }}
                                 </td>
                             </tr>
                         @endforelse
