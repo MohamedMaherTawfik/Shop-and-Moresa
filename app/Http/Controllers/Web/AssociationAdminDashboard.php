@@ -37,7 +37,6 @@ class AssociationAdminDashboard extends Controller
             'expires_at' => 'required|date|after:now',
             'count' => 'required|integer|min:1|max:1000',
         ]);
-        // dd($request->except('_token'));
         $coupons = [];
         for ($i = 0; $i < $request->count; $i++) {
             $coupons[] = [
