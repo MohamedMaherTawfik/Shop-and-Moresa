@@ -58,7 +58,7 @@ class AssociationAdminDashboard extends Controller
         return redirect()->route('association-admin.dashboard');
     }
 
-      private function generateUniqueCode(): string
+    private function generateUniqueCode(): string
     {
         do {
             $code = 'COUPON' . strtoupper(Str::random(8));
